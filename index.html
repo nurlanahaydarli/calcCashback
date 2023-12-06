@@ -9,10 +9,19 @@
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Document</title>
 </head>
+<style>
+    .alert{
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+        width: max-content;
+        z-index: 1;
+    }
+</style>
 <body>
 
 <!--<p data-name="John" data-age="34" data-job="developer">UserInfo</p>-->
-
+<div class="alert" id="alert"></div>
 <div class="w-75 my-5 mx-auto">
     <div class="input-group mb-3">
         <input type="text" class="form-control" id="expense_amount" placeholder="Mebleg">
