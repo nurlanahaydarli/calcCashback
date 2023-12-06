@@ -12,7 +12,11 @@ let personBalance = {
     cashBackHistory: [],
     calcCash: function (amount) {
         if (amount <= 0 || !amount) {
-            show_dangerAlert()
+            show_dangerAlert('Please write correct amount as a greater than 0!')
+            return
+        }
+        if(this.balance < amount){
+            show_dangerAlert('Insufficient funds')
             return
         }
         let new_cashback = amount * 3 / 100;
@@ -57,12 +61,12 @@ show_history.addEventListener("click", function () {
     return history_table.innerHTML = new_content
 })
 
-function show_dangerAlert() {
+function show_dangerAlert(message) {
     return alert_box.innerHTML = `
        <div class="alert alert-danger d-flex align-items-center" role="alert">
           <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
           <div>
-            Please write correct amount as a greater than 0!
+            ${message}
           </div>
        </div>
     `
